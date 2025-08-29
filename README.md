@@ -16,44 +16,69 @@ It processes an input array and returns:
 
 ---
 
-## 🚀 Live URL (Render Deployment)
-
 Your service is live at:
 https://bfhl-691p.onrender.com/bfhl
 
 ---
 
-## 📦 Run Locally
-
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/<your-username>/bfhl.git
+git clone https://github.com/LavanyaVajpayee/bfhl.git
 cd bfhl
 npm install
 npm start
 Server will run on http://localhost:3000
-.
-Request format
-{
-  "data": ["a", "1", "4", "Z", "*"]
-}
 
-Response format
+Request
 {
-  "is_success": true,
-  "user_id": "lavanya_vajpayee_17091999",
-  "email": "lavanya.vajpayee2025@vitstudent.ac.in",
-  "roll_number": "21BCE1234",
-  "odd_numbers": ["1"],
-  "even_numbers": ["4"],
-  "alphabets": ["A","Z"],
-  "special_characters": ["*"],
-  "sum": "5",
-  "concat_string": "Za"
+"data": [“a”,”1”,”334”,”4”,”R”, “$”]
 }
-▶️ Testing with PowerShell (Windows)
-Invoke-RestMethod -Uri "https://bfhl-691p.onrender.com/bfhl" -Method POST -Body '{"data":["a","1","4","Z","*"]}' -ContentType "application/json"
-▶️ Testing with curl (Linux/Mac/WSL)
-curl -X POST https://bfhl-691p.onrender.com/bfhl \
-  -H "Content-Type: application/json" \
+Response
+{
+"is_success": true,
+"user_id": "john_doe_17091999",
+“email” : “john@xyz.com”,
+“roll_number”:”ABCD123”,
+"odd_numbers": [“1”],
+"even_numbers": [“334”,”4”],
+"alphabets": [“A”,”R”],
+“special_characters”: [“$”],
+"sum": "339" // return sum as a string
+"concat_string": "Ra"
+}
+Request
+{
+"data": [“2”,"a", "y", ”4”, ”&”, “-”, “*”, ”5”,”92”,”b”]
+}
+Response
+{
+"is_success": true,
+"user_id": "john_doe_17091999",
+“email” : “john@xyz.com”,
+“roll_number”:”ABCD123”,
+"odd_numbers": [”5”],
+"even_numbers": [“2”,”4”,”92”],
+
+"alphabets": [“A”, "Y", “B”],
+“sepcial_characters”: [“&”, “-”, “*”],
+"sum": "103",
+"concat_string": "ByA"
+}
+Request
+{
+"data": ["A",”ABcD”,”DOE”]
+}
+Response
+{
+"is_success": true,
+"user_id": "john_doe_17091999",
+“email” : “john@xyz.com”,
+“roll_number”:”ABCD123”,
+"odd_numbers": [],
+"even_numbers": [],
+"alphabets": ["A",”ABCD”,”DOE”],
+“special_characters”: [],
+"sum": "0",
+"concat_string": "EoDdCbAa"
+}
   -d '{"data":["a","1","4","Z","*"]}'
